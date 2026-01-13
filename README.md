@@ -29,6 +29,15 @@ Backend EC2 Instances (Private App Subnets)
  │
  ▼
 Database Layer (Private DB Subnets)
+## 📸 Project Screenshots
+### VPC & Subnets
+![VPC](screenshots/Screenshot%202026-01-07%20120313.png)
+
+### Application Load Balancer
+![ALB](screenshots/Screenshot%202026-01-12%20123111.png)
+
+### Target Group & EC2
+![EC2](screenshots/Screenshot%202026-01-13%20130517.png)
 
 🧩 AWS Services Used
 
@@ -169,5 +178,6 @@ Add NAT Gateway for outbound access
 Add Auto Scaling Group for backend tier
 
 Add HTTPS listener with ACM certificate
+
 
 Add CloudWatch alarms and logging
