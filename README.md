@@ -15,21 +15,28 @@ Database layer (private, isolated)
 
 This project was built as a hands-on cloud engineering lab to showcase AWS networking, load balancing, and security concepts.
 
-🏗️ Architecture Diagram (Logical)
+## 🏗️ Architecture Diagram (Logical)
+
 User
  │
  │  HTTPS
+ 
  ▼
 CloudFront (CDN)
+
  │
  ▼
+ 
 Application Load Balancer (Public Subnets)
  │
  ▼
+ 
 Backend EC2 Instances (Private App Subnets)
  │
  ▼
+ 
 Database Layer (Private DB Subnets)
+
 ## 📸 Project Screenshots
 ### VPC & Subnets
 ![VPC](screenshots/Screenshot%202026-01-07%20120313.png)
@@ -40,145 +47,145 @@ Database Layer (Private DB Subnets)
 ### Target Group & EC2
 ![EC2](screenshots/Screenshot%202026-01-13%20130517.png)
 
-🧩 AWS Services Used
+## 🧩 AWS Services Used
 
-Amazon VPC
+-Amazon VPC
 
-Public & Private Subnets (Multi-AZ)
+- Public & Private Subnets (Multi-AZ)
 
-Internet Gateway
+- Internet Gateway
 
-Security Groups
+- Security Groups
 
-Application Load Balancer (ALB)
+- Application Load Balancer (ALB)
 
-Target Groups
+- Target Groups
 
-Amazon EC2 (Amazon Linux 2023)
+- Amazon EC2 (Amazon Linux 2023)
 
-AWS Systems Manager (Session Manager)
+- AWS Systems Manager (Session Manager)
 
-Amazon CloudFront
+- Amazon CloudFront
 
-🔐 Networking & Security Design
+## 🔐 Networking & Security Design
 
-ALB deployed in public subnets
+- ALB deployed in public subnets
 
-Backend EC2 deployed in private subnets
+- Backend EC2 deployed in private subnets
 
-Database subnets isolated from public access
+- Database subnets isolated from public access
 
-Security Groups used instead of open CIDR rules:
+- Security Groups used instead of open CIDR rules:
 
-ALB SG allows HTTP (80) from internet
+- ALB SG allows HTTP (80) from internet
 
-Backend SG allows traffic only from ALB SG
+-Backend SG allows traffic only from ALB SG
 
-No direct SSH access (managed via SSM Session Manager)
+- No direct SSH access (managed via SSM Session Manager)
 
-⚙️ Load Balancing
+## ⚙️ Load Balancing
 
-Application Load Balancer (ALB)
+- Application Load Balancer (ALB)
 
-Listener: HTTP : 80
+- Listener: HTTP : 80
 
-Target Group:
+- Target Group:
 
-Type: Instance
+- Type: Instance
 
-Protocol: HTTP
+- Protocol: HTTP
 
-Port: 80
+- Port: 80
 
-Health checks configured on backend instances
+- Health checks configured on backend instances
 
-🌍 Content Delivery
+## 🌍 Content Delivery
 
-CloudFront distribution configured in front of the ALB
+- CloudFront distribution configured in front of the ALB
 
-Improves performance and simulates real-world frontend delivery
+- Improves performance and simulates real-world frontend delivery
 
-Supports HTTP/1.1 and HTTP/2
+- Supports HTTP/1.1 and HTTP/2
 
-🧪 Testing & Validation
+## 🧪 Testing & Validation
 
-Verified ALB DNS resolution
+- Verified ALB DNS resolution
 
-Verified CloudFront distribution creation
+- Verified CloudFront distribution creation
 
-Validated security group traffic flow
+- Validated security group traffic flow
 
-Confirmed backend isolation from direct internet access
+- Confirmed backend isolation from direct internet access
 
-Troubleshot package installation and connectivity issues
+- Troubleshot package installation and connectivity issues
 
-⚠️ Known Limitation (Intentional Design Choice)
+## ⚠️ Known Limitation (Intentional Design Choice)
 
 The backend EC2 instances are deployed in private subnets without a NAT Gateway.
 
 Impact:
 
-Backend instances do not have outbound internet access
+- Backend instances do not have outbound internet access
 
-Package installation (e.g., dnf install httpd) fails due to no NAT
+- Package installation (e.g., dnf install httpd) fails due to no NAT
 
 Reason:
 
-This was a deliberate architectural decision to demonstrate:
+- This was a deliberate architectural decision to demonstrate:
 
-Proper private subnet isolation
+- Proper private subnet isolation
 
-Real-world cloud security design
+- Real-world cloud security design
 
-Understanding of NAT Gateway requirements
+- Understanding of NAT Gateway requirements
 
-Improvement (Future Enhancement):
+- Improvement (Future Enhancement):
 
-Add a NAT Gateway in a public subnet
+- Add a NAT Gateway in a public subnet
 
-Allow secure outbound access for updates while keeping instances private
+- Allow secure outbound access for updates while keeping instances private
 
-💼 Skills Demonstrated
+## 💼 Skills Demonstrated
 
-AWS VPC design (public vs private subnets)
+- AWS VPC design (public vs private subnets)
 
-Load balancing with ALB & target groups
+- Load balancing with ALB & target groups
 
-Secure traffic flow using Security Groups
+- Secure traffic flow using Security Groups
 
-CloudFront integration
+- CloudFront integration
 
-Troubleshooting AWS networking issues
+- Troubleshooting AWS networking issues
 
-Using AWS Systems Manager instead of SSH
+- Using AWS Systems Manager instead of SSH
 
-Cost awareness and architectural trade-offs
+- Cost awareness and architectural trade-offs
 
-🎯 Use Case
+## 🎯 Use Case
 
 This project is designed as a portfolio-grade AWS lab suitable for:
 
-Junior Cloud Engineer
+- Junior Cloud Engineer
 
-AWS Support Engineer
+- AWS Support Engineer
 
-DevOps / SRE (entry-level)
+- DevOps / SRE (entry-level)
 
-Cloud Operations roles
+- Cloud Operations roles
 
-📌 Author
+## 📌 Author
 
 Muhammad Baqir Nawaz
 Aspiring Cloud / AWS Engineer
 Focused on hands-on projects, troubleshooting, and real-world architectures.
 
-📎 Next Improvements
+## 📎 Next Improvements
 
-Add NAT Gateway for outbound access
+- Add NAT Gateway for outbound access
 
-Add Auto Scaling Group for backend tier
+-Add Auto Scaling Group for backend tier
 
-Add HTTPS listener with ACM certificate
+- Add HTTPS listener with ACM certificate
 
 
-Add CloudWatch alarms and logging
+- Add CloudWatch alarms and logging
