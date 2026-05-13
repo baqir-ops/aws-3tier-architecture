@@ -22,6 +22,7 @@ User
  │  HTTPS
  
  ▼
+ 
 CloudFront (CDN)
 
  │
