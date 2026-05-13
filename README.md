@@ -49,7 +49,7 @@ Database Layer (Private DB Subnets)
 
 ## 🧩 AWS Services Used
 
--Amazon VPC
+- Amazon VPC
 
 - Public & Private Subnets (Multi-AZ)
 
@@ -79,7 +79,7 @@ Database Layer (Private DB Subnets)
 
 - ALB SG allows HTTP (80) from internet
 
--Backend SG allows traffic only from ALB SG
+- Backend SG allows traffic only from ALB SG
 
 - No direct SSH access (managed via SSM Session Manager)
 
@@ -183,7 +183,7 @@ Focused on hands-on projects, troubleshooting, and real-world architectures.
 
 - Add NAT Gateway for outbound access
 
--Add Auto Scaling Group for backend tier
+- Add Auto Scaling Group for backend tier
 
 - Add HTTPS listener with ACM certificate
 
