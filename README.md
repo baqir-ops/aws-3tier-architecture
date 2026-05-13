@@ -176,7 +176,8 @@ This project is designed as a portfolio-grade AWS lab suitable for:
 
 ## 📌 Author
 
-Muhammad Baqir Nawaz
+## Muhammad Baqir Nawaz
+
 Aspiring Cloud / AWS Engineer
 Focused on hands-on projects, troubleshooting, and real-world architectures.
 
