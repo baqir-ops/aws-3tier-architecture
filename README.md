@@ -1,5 +1,6 @@
-🚀 AWS 3-Tier Architecture Project (VPC + ALB + CloudFront)
-📌 Project Overview
+## 🚀 AWS 3-Tier Architecture Project (VPC + ALB + CloudFront)
+
+# 📌 Project Overview
 
 This project demonstrates the design and implementation of a secure and scalable 3-tier architecture on AWS, following real-world cloud best practices.
 It focuses on network isolation, traffic routing, and high availability, rather than just application hosting.
